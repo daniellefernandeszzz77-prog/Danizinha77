@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Área de pacotes com pagamento por PIX e envio de comprovante." />
+    <title>Área de Pacotes 18+</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="age-gate" class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title">
+      <section class="age-card">
+        <div class="age-stripe"></div>
+        <div class="age-content">
+          <div class="shield">18+</div>
+          <h1 id="age-title">Você tem 18 anos ou mais?</h1>
+          <p>Ao continuar, você confirma que é maior de idade e acessa este site por decisão própria.</p>
+          <div class="age-actions">
+            <button id="deny-age" class="button secondary" type="button">Sou menor de 18</button>
+            <button id="confirm-age" class="button primary" type="button">Tenho 18 anos ou mais</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <main id="site" aria-hidden="true">
+      <header class="header shell">
+        <a class="brand" href="#inicio" aria-label="Início">
+          <span class="brand-mark">18+</span>
+          <span id="brand-name">Conteúdo exclusivo</span>
+        </a>
+        <span class="safe-badge">Ambiente seguro</span>
+      </header>
+
+      <section id="inicio" class="hero shell">
+        <span class="eyebrow">Acesso reservado para maiores de 18 anos</span>
+        <h1>Escolha seu pacote e finalize em poucos passos.</h1>
+        <p>Selecione uma opção, faça o pagamento por PIX e envie o comprovante. Depois da confirmação, você seguirá para o Instagram da vendedora.</p>
+        <a class="button light" href="#pacotes">Ver os pacotes <span aria-hidden="true">→</span></a>
+      </section>
+
+      <section id="pacotes" class="section shell">
+        <p class="section-kicker">Pacotes disponíveis</p>
+        <h2>Encontre a opção ideal para você.</h2>
+        <div id="packages" class="package-grid"></div>
+      </section>
+
+      <section id="pagamento" class="section shell">
+        <div class="checkout">
+          <aside class="checkout-summary">
+            <p class="section-kicker">Pagamento</p>
+            <h2>Finalize seu pedido</h2>
+            <div class="selection-box">
+              <small>Sua escolha</small>
+              <div><strong id="selected-name">Nenhum pacote selecionado</strong><span id="selected-price">—</span></div>
+            </div>
+            <ol class="steps">
+              <li><span>1</span> Escolha um dos três pacotes</li>
+              <li><span>2</span> Copie a chave e faça o PIX</li>
+              <li><span>3</span> Anexe o comprovante para continuar</li>
+            </ol>
+          </aside>
+
+          <div class="checkout-form-wrap">
+            <div id="checkout-empty" class="checkout-empty">
+              <span class="lock">⌁</span>
+              <strong>Selecione um pacote primeiro</strong>
+              <p>A chave PIX e o campo do comprovante aparecem após sua escolha.</p>
+            </div>
+
+            <form id="receipt-form" class="receipt-form" hidden>
+              <label for="pix-key">Chave PIX</label>
+              <div class="pix-row">
+                <input id="pix-key" type="text" readonly value="CHAVE PIX PENDENTE" />
+                <button id="copy-pix" class="copy-button" type="button" aria-label="Copiar chave PIX">Copiar</button>
+              </div>
+
+              <label for="receipt">Comprovante de pagamento</label>
+              <label class="upload-box" for="receipt">
+                <span class="upload-icon">↑</span>
+                <strong id="file-name">Clique para escolher o arquivo</strong>
+                <small>JPG, PNG ou PDF • máximo de 10 MB</small>
+              </label>
+              <input id="receipt" type="file" accept="image/jpeg,image/png,application/pdf" hidden />
+
+              <button id="send-receipt" class="button primary full" type="submit" disabled>
+                Enviar comprovante <span aria-hidden="true">→</span>
+              </button>
+              <p id="form-status" class="form-status" role="status"></p>
+              <small class="privacy-note">O comprovante será usado somente para validar o pagamento.</small>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer>Conteúdo exclusivo para maiores de 18 anos. © 2026</footer>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
