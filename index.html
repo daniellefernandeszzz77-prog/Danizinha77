@@ -3,100 +3,210 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Área de pacotes com pagamento por PIX e envio de comprovante." />
-    <title>Área de Pacotes 18+</title>
+    <meta
+      name="description"
+      content="Escolha seu pacote exclusivo, pague via Pix e envie o comprovante pelo Instagram."
+    />
+    <meta name="theme-color" content="#0b0908" />
+    <title>Laranjinha — Conteúdo exclusivo +18</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="age-gate" class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title">
+    <div
+      id="age-gate"
+      class="age-gate"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="age-title"
+    >
       <section class="age-card">
-        <div class="age-stripe"></div>
-        <div class="age-content">
-          <div class="shield">18+</div>
+        <div class="age-topline">
+          <span class="brand-mark">L.</span>
+          <span>ACESSO RESTRITO</span>
+        </div>
+        <div id="age-content">
+          <div class="age-number" aria-hidden="true">18+</div>
           <h1 id="age-title">Você tem 18 anos ou mais?</h1>
-          <p>Ao continuar, você confirma que é maior de idade e acessa este site por decisão própria.</p>
+          <p>
+            Este site contém ofertas de conteúdo destinado exclusivamente ao
+            público adulto. Ao entrar, você confirma ser maior de idade.
+          </p>
           <div class="age-actions">
-            <button id="deny-age" class="button secondary" type="button">Sou menor de 18</button>
-            <button id="confirm-age" class="button primary" type="button">Tenho 18 anos ou mais</button>
+            <button id="confirm-age" class="button primary" type="button">
+              Sim, tenho 18 anos ou mais
+            </button>
+            <button id="deny-age" class="button ghost" type="button">
+              Não, quero sair
+            </button>
           </div>
+          <small>Sua confirmação fica salva neste dispositivo.</small>
         </div>
       </section>
     </div>
 
-    <main id="site" aria-hidden="true">
-      <header class="header shell">
-        <a class="brand" href="#inicio" aria-label="Início">
-          <span class="brand-mark">18+</span>
-          <span id="brand-name">Conteúdo exclusivo</span>
+    <main id="site" class="site-shell" aria-hidden="true">
+      <header class="site-header shell">
+        <a class="brand" href="#inicio" aria-label="Laranjinha — início">
+          <span class="brand-mark" aria-hidden="true">L.</span>
+          <span data-brand>LARANJINHA</span>
         </a>
-        <span class="safe-badge">Ambiente seguro</span>
+        <span class="header-pill">▣ ambiente +18</span>
       </header>
 
-      <section id="inicio" class="hero shell">
-        <span class="eyebrow">Acesso reservado para maiores de 18 anos</span>
-        <h1>Escolha seu pacote e finalize em poucos passos.</h1>
-        <p>Selecione uma opção, faça o pagamento por PIX e envie o comprovante. Depois da confirmação, você seguirá para o Instagram da vendedora.</p>
-        <a class="button light" href="#pacotes">Ver os pacotes <span aria-hidden="true">→</span></a>
-      </section>
-
-      <section id="pacotes" class="section shell">
-        <p class="section-kicker">Pacotes disponíveis</p>
-        <h2>Encontre a opção ideal para você.</h2>
-        <div id="packages" class="package-grid"></div>
-      </section>
-
-      <section id="pagamento" class="section shell">
-        <div class="checkout">
-          <aside class="checkout-summary">
-            <p class="section-kicker">Pagamento</p>
-            <h2>Finalize seu pedido</h2>
-            <div class="selection-box">
-              <small>Sua escolha</small>
-              <div><strong id="selected-name">Nenhum pacote selecionado</strong><span id="selected-price">—</span></div>
-            </div>
-            <ol class="steps">
-              <li><span>1</span> Escolha um dos três pacotes</li>
-              <li><span>2</span> Copie a chave e faça o PIX</li>
-              <li><span>3</span> Anexe o comprovante para continuar</li>
-            </ol>
-          </aside>
-
-          <div class="checkout-form-wrap">
-            <div id="checkout-empty" class="checkout-empty">
-              <span class="lock">⌁</span>
-              <strong>Selecione um pacote primeiro</strong>
-              <p>A chave PIX e o campo do comprovante aparecem após sua escolha.</p>
-            </div>
-
-            <form id="receipt-form" class="receipt-form" hidden>
-              <label for="pix-key">Chave PIX</label>
-              <div class="pix-row">
-                <input id="pix-key" type="text" readonly value="CHAVE PIX PENDENTE" />
-                <button id="copy-pix" class="copy-button" type="button" aria-label="Copiar chave PIX">Copiar</button>
-              </div>
-
-              <label for="receipt">Comprovante de pagamento</label>
-              <label class="upload-box" for="receipt">
-                <span class="upload-icon">↑</span>
-                <strong id="file-name">Clique para escolher o arquivo</strong>
-                <small>JPG, PNG ou PDF • máximo de 10 MB</small>
-              </label>
-              <input id="receipt" type="file" accept="image/jpeg,image/png,application/pdf" hidden />
-
-              <button id="send-receipt" class="button primary full" type="submit" disabled>
-                Enviar comprovante <span aria-hidden="true">→</span>
-              </button>
-              <p id="form-status" class="form-status" role="status"></p>
-              <small class="privacy-note">O comprovante será usado somente para validar o pagamento.</small>
-            </form>
+      <section id="inicio" class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+        <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <div class="eyebrow-line">
+            <span class="status-dot" aria-hidden="true"></span>
+            CONTEÚDO EXCLUSIVO • ACESSO PRIVADO
           </div>
+          <h1 id="hero-title">
+            Todos os meus conteúdos.<em> Um só lugar.</em>
+          </h1>
+          <p>
+            Escolha seu pacote, pague com Pix e envie o comprovante direto no
+            Instagram para receber seu acesso.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary hero-button" href="#pacotes">
+              Escolher meu pacote <span aria-hidden="true">↓</span>
+            </a>
+            <span class="micro-proof">✓ Pagamento simples e direto</span>
+          </div>
+        </div>
+        <div class="hero-stamp" aria-hidden="true">
+          <span>ACESSO</span>
+          <strong>18+</strong>
+          <span>EXCLUSIVO</span>
         </div>
       </section>
 
-      <footer>Conteúdo exclusivo para maiores de 18 anos. © 2026</footer>
+      <div class="trust-rail" aria-label="Informações do processo">
+        <span>PIX</span><i aria-hidden="true"></i>
+        <span>CONFIRMAÇÃO PELO INSTAGRAM</span><i aria-hidden="true"></i>
+        <span>ENTREGA PRIVADA</span>
+      </div>
+
+      <section id="pacotes" class="packages-section shell" aria-labelledby="packages-title">
+        <div class="section-heading">
+          <div>
+            <span class="section-index">01 / PACOTES</span>
+            <h2 id="packages-title">Escolha até onde você quer ir.</h2>
+          </div>
+          <p>
+            Três opções, uma compra simples. O valor aparece fixo no Pix do
+            pacote escolhido.
+          </p>
+        </div>
+        <div id="packages" class="package-grid"></div>
+      </section>
+
+      <section class="process-section shell" aria-labelledby="process-title">
+        <div class="process-copy">
+          <span class="section-index">02 / COMO RECEBER</span>
+          <h2 id="process-title">Do pacote ao acesso em três passos.</h2>
+        </div>
+        <ol class="process-list">
+          <li>
+            <span>01</span>
+            <div><strong>Escolha seu pacote</strong><p>Compare as opções e toque no pacote ideal.</p></div>
+          </li>
+          <li>
+            <span>02</span>
+            <div><strong>Faça o Pix</strong><p>Use o QR Code ou copie o código no checkout.</p></div>
+          </li>
+          <li>
+            <span>03</span>
+            <div><strong>Envie o comprovante</strong><p>Abra o Instagram pelo botão e mande o comprovante.</p></div>
+          </li>
+        </ol>
+      </section>
+
+      <footer class="site-footer shell">
+        <a class="brand footer-brand" href="#inicio">
+          <span class="brand-mark" aria-hidden="true">L.</span>
+          <span data-brand>LARANJINHA</span>
+        </a>
+        <p>
+          Conteúdo destinado exclusivamente a maiores de 18 anos. A confirmação
+          do pagamento e a entrega são manuais.
+        </p>
+        <span>© 2026</span>
+      </footer>
     </main>
 
-    <script src="config.js"></script>
-    <script src="app.js"></script>
+    <dialog id="checkout" class="checkout-dialog" aria-labelledby="checkout-title">
+      <button id="close-checkout" class="dialog-close" type="button" aria-label="Fechar checkout">×</button>
+      <span class="checkout-kicker">CHECKOUT PIX</span>
+      <h2 id="checkout-title">Finalize seu pacote</h2>
+      <p class="checkout-intro">
+        Escaneie o QR Code ou copie o código Pix. Depois, envie o comprovante no Instagram.
+      </p>
+
+      <div id="config-warning" class="config-warning" role="status" hidden>
+        <span aria-hidden="true">✦</span>
+        <div>
+          <strong>Checkout em modo de demonstração</strong>
+          <small>Adicione o nome, a chave Pix e o Instagram para ativar o pagamento.</small>
+        </div>
+      </div>
+
+      <div class="checkout-summary">
+        <div><span>Pacote escolhido</span><strong id="selected-name">—</strong></div>
+        <div class="checkout-total"><span>Total</span><strong id="selected-price">—</strong></div>
+      </div>
+
+      <div class="payment-grid">
+        <div class="qr-panel">
+          <div id="qr-code" class="qr-code" aria-label="QR Code Pix"></div>
+          <div id="qr-placeholder" class="qr-placeholder" aria-hidden="true">
+            <span>PIX</span><small>QR CODE</small>
+          </div>
+          <small id="qr-error" class="qr-error" hidden>
+            QR indisponível. Use o Pix Copia e Cola.
+          </small>
+        </div>
+
+        <div class="pix-details">
+          <div class="pix-field">
+            <span>Nome do recebedor</span>
+            <strong id="pix-name">NÃO CONFIGURADO</strong>
+          </div>
+          <div class="pix-field">
+            <span>Chave Pix aleatória</span>
+            <code id="pix-key">NÃO CONFIGURADA</code>
+            <button id="copy-key" class="inline-copy" type="button">
+              ⧉ Copiar chave
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button id="copy-payload" class="button primary full" type="button">
+        ⧉ Copiar Pix Copia e Cola
+      </button>
+
+      <div class="receipt-step">
+        <span aria-hidden="true">✓</span>
+        <div>
+          <strong>Pagou? Envie o comprovante.</strong>
+          <small>O Instagram abre direto na conversa para confirmar seu acesso.</small>
+        </div>
+      </div>
+
+      <a id="instagram-button" class="button instagram full" href="#" target="_blank" rel="noreferrer">
+        ◎ Abrir Instagram e enviar comprovante
+      </a>
+      <small class="checkout-note">
+        O site não pede senha, código bancário ou dados do seu cartão.
+      </small>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script defer src="config.js"></script>
+    <script defer src="app.js"></script>
   </body>
 </html>

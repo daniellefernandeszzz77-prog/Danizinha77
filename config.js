@@ -1,29 +1,49 @@
-window.SITE_CONFIG = {
-  brandName: "Conteúdo exclusivo",
+window.LARANJINHA_CONFIG = Object.freeze({
+  brandName: "Laranjinha",
+
+  // Preencha estes quatro campos para ativar o checkout.
+  pixName: "",
   pixKey: "",
-  instagramUrl: "",
-  receiptApi: "https://area-pacotes.joaogatti170.chatgpt.site/api/receipts",
+  pixCity: "ITABIRA",
+  instagramUsername: "",
+
   packages: [
     {
-      id: "pacote-1",
-      name: "Pacote 1",
-      price: "R$ --,--",
-      description: "Nome, valor e descrição serão inseridos com os dados finais.",
-      image: ""
+      id: "hot",
+      label: "PARA COMEÇAR",
+      name: "PACOTE HOT",
+      price: 10.99,
+      description:
+        "Uma seleção direta e exclusiva para conhecer o melhor do conteúdo.",
+      features: ["5 fotos exclusivas", "2 vídeos completos", "Entrega privada"]
     },
     {
-      id: "pacote-2",
-      name: "Pacote 2",
-      price: "R$ --,--",
-      description: "Nome, valor e descrição serão inseridos com os dados finais.",
-      image: ""
+      id: "red",
+      label: "MAIS ESCOLHIDO",
+      name: "PACOTE RED",
+      price: 22.99,
+      description:
+        "O pacote mais completo para quem quer variedade e muito mais conteúdo.",
+      features: [
+        "100 fotos exclusivas",
+        "50 vídeos completos",
+        "Melhor custo-benefício"
+      ],
+      featured: true
     },
     {
-      id: "pacote-3",
-      name: "Pacote 3",
-      price: "R$ --,--",
-      description: "Nome, valor e descrição serão inseridos com os dados finais.",
-      image: ""
+      id: "arco-iris",
+      label: "EXPERIÊNCIA MÁXIMA",
+      name: "PACOTE ARCO-ÍRIS",
+      price: 30.99,
+      description:
+        "A maior coleção, com variedade máxima reunida em um único pacote.",
+      features: [
+        "Mais de 100 conteúdos",
+        "Seleção especial",
+        "A coleção mais completa"
+      ],
+      rainbow: true
     }
   ]
-};
+});
